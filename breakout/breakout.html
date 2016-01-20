@@ -1,0 +1,67 @@
+<html>
+<head>
+<script type="text/javascript" language="javascript" src="breakout.js"></script>
+<style type="text/css">
+div#main {
+    width: 800px;
+    height: 600px;
+    border: 1mm solid black;
+    position: relative;
+}
+div.brick {
+    width: 76px;
+    height: 16px;
+    background: red;
+    border: none;
+    margin: 2px;
+    padding: 0;
+}
+div.broken {
+    visibility: hidden;
+}
+div#ball {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    background: black;
+    z-index: 100;
+}
+div#paddle {
+    position: absolute;
+    width: 140px;
+    height: 20px;
+    background: black;
+    top: 550;
+}
+div.row0 { position: absolute; top: 100px; background: red; }
+div.row1 { position: absolute; top: 120px; background: red; }
+div.row2 { position: absolute; top: 140px; background: orange; }
+div.row3 { position: absolute; top: 160px; background: orange; }
+div.row4 { position: absolute; top: 180px; background: #f0f000; }
+div.row5 { position: absolute; top: 200px; background: #f0f000; }
+div.row6 { position: absolute; top: 220px; background: lightgreen; }
+div.row7 { position: absolute; top: 240px; background: lightgreen; }
+div.row8 { position: absolute; top: 260px; background: cyan; }
+div.row9 { position: absolute; top: 280px; background: cyan; }
+div.col0 { position: absolute; left:   0px; }
+div.col1 { position: absolute; left:  80px; }
+div.col2 { position: absolute; left: 160px; }
+div.col3 { position: absolute; left: 240px; }
+div.col4 { position: absolute; left: 320px; }
+div.col5 { position: absolute; left: 400px; }
+div.col6 { position: absolute; left: 480px; }
+div.col7 { position: absolute; left: 560px; }
+div.col8 { position: absolute; left: 640px; }
+div.col9 { position: absolute; left: 720px; }
+</style>
+</head>
+<body>
+<center>
+<h1>Breakout!</h1>
+<div id="main">
+</div>
+</center>
+</body>
+</html>
