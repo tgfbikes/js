@@ -3,7 +3,7 @@
 (function iife() {
   var tds = document.getElementsByTagName('td');
   var currentPlayer = 'X';
-  var gameOver = false;
+  var isWinner = false;
   var alertCatsGame = false;
   var moveCount = 0;
   var board = [['', '', ''], ['', '', ''], ['', '', '']];
@@ -23,7 +23,7 @@
   }
   
   function checkForTie() {
-    if (moveCount === 9 && !alertCatsGame) {
+    if (moveCount === 9 && !alertCatsGame && !isWinner) {
       alert('Cats game');
       alertCatsGame = true;
     } else {
@@ -39,7 +39,7 @@
       document.getElementById('square' + x1 + y1).className = 'winner';
       document.getElementById('square' + x2 + y2).className = 'winner';
       document.getElementById('square' + x3 + y3).className = 'winner';
-      alert('Winner is ' + currentPlayer);
+      isWinner = true;
     }
   }
   
@@ -52,6 +52,9 @@
     checkWinningPositions(0, 2, 1, 2, 2, 2); // 3rd col
     checkWinningPositions(0, 0, 1, 1, 2, 2); // diagonal
     checkWinningPositions(0, 2, 1, 1, 2, 0); // diagonal
+    if (isWinner) {
+      alert('The winner is ' + currentPlayer);
+    }
   }
   
   function clickHandler() {
