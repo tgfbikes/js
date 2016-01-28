@@ -39,12 +39,15 @@
     if (x > (paddleLeft + 140)) {
       return;
     }
+    
     if ((x+30) < (paddleLeft)) {
       return;
     }
+    
     if ((y + 30) < 550) {
       return;
     }
+    
     vy *= -1;
   }
   
@@ -80,7 +83,20 @@
     if (y <= 0 || y >= 570) {
       vy = -1 * vy;
     }
-    
+  }
+  
+  function checkForWinOrLoss(y) {
+    console.log(y);
+    if (y < 50) {
+      ball.classList.add('broken');
+      alert('You win');
+      window.clearInterval(intervalID);
+    }
+    if (y > 570) {
+      ball.classList.add('broken');
+      alert('You lose');
+      window.clearInterval(intervalID);
+    }
   }
   
   function moveBall() {
@@ -96,6 +112,7 @@
     checkForBrickCollision(newX, newY + 30);
     checkForBrickCollision(newX + 30, newY + 30);
     checkForPaddleCollision(newX, newY);
+    checkForWinOrLoss(newY);
   }
   
   function setUpBoard() {
@@ -106,10 +123,6 @@
         main.appendChild(div);
       }
     }
-  }
-  
-  function addBrokenClass(elem) {
-    elem.classList.add('broken');
   }
   
   function addPaddle() {
