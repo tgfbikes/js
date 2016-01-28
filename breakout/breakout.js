@@ -3,8 +3,16 @@
 (function breakoutIIFE() {
   var main = document.getElementById('main');
   var paddle = document.createElement('div');
+  var paddlePos = 800;
   document.body.addEventListener('mousemove', function mousemove(evt) {
-    console.log(evt.clientX);
+    if (evt.clientX < 630) {
+      paddle.style.left = 0;
+    } else if (evt.clientX > 1290) {
+      paddle.style.left = 660;
+    } else {
+      paddle.style.left = evt.clientX - 630;
+      console.log(evt.clientX);
+    }
   });
   
   function setUpBoard() {
@@ -30,6 +38,5 @@
   
   setUpBoard();
   addPaddle();
-  paddle.style.left = (800 - 140) / 2;
   
 }());
