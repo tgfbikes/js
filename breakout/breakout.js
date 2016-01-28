@@ -32,13 +32,38 @@
     document.body.removeEventListener('click');
   });
   
-  function checkForCollision(x, y) {
+  function checkForBrickCollision(x, y) {
+    var brickx = 80;  // dimensions of a brick
+    var bricky = 20;
+    var row = Math.floor((y - 100) / bricky);
+    var col = Math.floor(x / brickx);
+    
+    if (row < 0 || row >= 10 || col < 0 || col >= 10) {
+      
+    }
+    
+    if ((x+2) % brickx < 4 || (y+2) % bricky < 4) {
+      
+    }
+    
+    try {
+      var brick = document.getElementsByClassName('row' + row.toString() + ' col' + col.toString());
+      if (!brick[0].classList.contains('broken')) {
+        brick[0].classList.add('broken');
+      }
+    } catch (e) {}
+  }
+  
+  function checkForWallCollision(x, y) {
+    // Check for collision with game box on x plain
     if (x <= 0 || x >= 770) {
       vx = -1 * vx;
     }
+    // Check for collision with game box on y plain
     if (y <= 0 || y >= 570) {
       vy = -1 * vy;
     }
+    
   }
   
   function moveBall() {
@@ -48,7 +73,11 @@
     var newY = oldY + vy;
     ball.style.left = newX;
     ball.style.top = newY;
-    checkForCollision(newX, newY);
+    checkForWallCollision(newX, newY);
+    checkForBrickCollision(newX, newY);
+    checkForBrickCollision(newX + 30, newY);
+    checkForBrickCollision(newX, newY + 30);
+    checkForBrickCollision(newX + 30, newY + 30);
   }
   
   function setUpBoard() {
@@ -70,9 +99,6 @@
     main.appendChild(paddle);
   }
   
-  
-  console.log(vx);
-  console.log(vy);
   setUpBoard();
   addPaddle();
   
