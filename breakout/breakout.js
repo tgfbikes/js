@@ -50,6 +50,7 @@
       var brick = document.getElementsByClassName('row' + row.toString() + ' col' + col.toString());
       if (!brick[0].classList.contains('broken')) {
         brick[0].classList.add('broken');
+        vy = -1 * vy;
       }
     } catch (e) {}
   }
