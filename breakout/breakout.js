@@ -3,7 +3,19 @@
 (function breakoutIIFE() {
   var main = document.getElementById('main');
   var paddle = document.createElement('div');
-  var paddlePos = 800;
+  var ball = document.createElement('div');
+  //var intervalID = window.setInterval(moveBall, 20);
+  // ball velocity
+  var msPerFrame = 20;
+  var secondsPerFrame = msPerFrame / 1000;
+
+  // This sets horizontal rate to 200--600 pixels/second
+  var vx = secondsPerFrame * (Math.floor(Math.random() * 400) + 200);
+  if (Math.random() < 0.5) vx = -vx;
+
+  // This sets verical rate to 500 pixels/second
+  var vy = secondsPerFrame * 500;
+  
   document.body.addEventListener('mousemove', function mousemove(evt) {
     if (evt.clientX < 630) {
       paddle.style.left = 0;
@@ -13,6 +25,12 @@
       paddle.style.left = evt.clientX - 630;
       console.log(evt.clientX);
     }
+  });
+  
+  document.body.addEventListener('click', function createBall(evt) {
+    ball.id = 'ball';
+    main.appendChild(ball);
+    document.body.removeEventListener('click');
   });
   
   function setUpBoard() {
