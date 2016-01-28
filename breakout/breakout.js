@@ -32,16 +32,23 @@
     document.body.removeEventListener('click');
   });
   
-  function checkForCollision() {
-    
+  function checkForCollision(x, y) {
+    if (x <= 0 || x >= 770) {
+      vx = -1 * vx;
+    }
+    if (y <= 0 || y >= 570) {
+      vy = -1 * vy;
+    }
   }
   
   function moveBall() {
     var oldX = parseInt(ball.style.left, 10);
     var oldY = parseInt(ball.style.top, 10);
-    ball.style.left = oldX + vx;
-    ball.style.top = oldY + vy;
-    //checkForCollision();
+    var newX = oldX + vx;
+    var newY = oldY + vy;
+    ball.style.left = newX;
+    ball.style.top = newY;
+    checkForCollision(newX, newY);
   }
   
   function setUpBoard() {
