@@ -32,23 +32,39 @@
     document.body.removeEventListener('click');
   });
   
+  function checkForPaddleCollision(x, y) {
+    var paddleLeft = parseInt(paddle.style.left, 10);
+    var paddleTop = parseInt(paddle.style.top, 10);
+    
+    if (x > (paddleLeft + 140)) {
+      return;
+    }
+    if ((x+30) < (paddleLeft)) {
+      return;
+    }
+    if ((y + 30) < 550) {
+      return;
+    }
+    vy *= -1;
+  }
+  
   function checkForBrickCollision(x, y) {
     var brickx = 80;  // dimensions of a brick
     var bricky = 20;
     var row = Math.floor((y - 100) / bricky);
     var col = Math.floor(x / brickx);
-    
     if (row < 0 || row >= 10 || col < 0 || col >= 10) {
-      
+      return;
     }
-    
+    // not in the right area
     if ((x+2) % brickx < 4 || (y+2) % bricky < 4) {
-      
+      return;
     }
-    
+    // not quite in the brick--it's in the white border around a brick
+    // otherwise, row and column give the brick number
     try {
       var brick = document.getElementsByClassName('row' + row.toString() + ' col' + col.toString());
-      if (!brick[0].classList.contains('broken')) {
+      if (!brick[0].classList.contains('broken') && vy < 0) {
         brick[0].classList.add('broken');
         vy = -1 * vy;
       }
@@ -79,6 +95,7 @@
     checkForBrickCollision(newX + 30, newY);
     checkForBrickCollision(newX, newY + 30);
     checkForBrickCollision(newX + 30, newY + 30);
+    checkForPaddleCollision(newX, newY);
   }
   
   function setUpBoard() {
