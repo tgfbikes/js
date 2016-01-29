@@ -2,6 +2,7 @@
 
 (function breakoutIIFE() {
   var main = document.getElementById('main');
+  main.style.left = 0;
   var paddle = document.createElement('div');
   var ball = document.createElement('div');
   var intervalID = window.setInterval(moveBall, 20);
@@ -15,12 +16,13 @@
   var vy = secondsPerFrame * 500;
   
   document.body.addEventListener('mousemove', function mousemove(evt) {
-    if (evt.clientX < 630) {
+    console.log(evt.clientX);
+    if (evt.clientX < main.offsetLeft + 70) {
       paddle.style.left = 0;
-    } else if (evt.clientX > 1290) {
+    } else if (evt.clientX > main.offsetLeft + 710) {
       paddle.style.left = 660;
     } else {
-      paddle.style.left = evt.clientX - 630;
+      paddle.style.left = evt.clientX - main.offsetLeft - 70;
     }
   });
   
@@ -86,16 +88,17 @@
   }
   
   function checkForWinOrLoss(y) {
-    console.log(y);
     if (y < 50) {
       ball.classList.add('broken');
       alert('You win');
       window.clearInterval(intervalID);
+      startNewGame();
     }
     if (y > 570) {
       ball.classList.add('broken');
       alert('You lose');
       window.clearInterval(intervalID);
+      startNewGame();
     }
   }
   
