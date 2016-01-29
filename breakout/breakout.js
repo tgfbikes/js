@@ -2,9 +2,9 @@
 
 (function breakoutIIFE() {
   var main = document.getElementById('main');
-  main.style.left = 0;
   var paddle = document.createElement('div');
   var ball = document.createElement('div');
+  // Every 20ms call the moveBall function.
   var intervalID = window.setInterval(moveBall, 20);
   // ball velocity
   var msPerFrame = 20;
@@ -15,6 +15,7 @@
   // This sets verical rate to 500 pixels/second
   var vy = secondsPerFrame * 500;
   
+  // Handler performs logic to center mouse over the paddle.
   document.body.addEventListener('mousemove', function mousemove(evt) {
     console.log(evt.clientX);
     if (evt.clientX < main.offsetLeft + 70) {
@@ -26,6 +27,8 @@
     }
   });
   
+  // Create ball and initialize its position on the board.  Remove
+  // click handler so user can't make more than one ball.
   document.body.addEventListener('click', function createBall(evt) {
     ball.id = 'ball';
     ball.style.left = 300;
@@ -34,6 +37,7 @@
     document.body.removeEventListener('click');
   });
   
+  // Checks for paddle collision with ball; if so then negate vy.
   function checkForPaddleCollision(x, y) {
     var paddleLeft = parseInt(paddle.style.left, 10);
     var paddleTop = parseInt(paddle.style.top, 10);
@@ -58,15 +62,19 @@
     var bricky = 20;
     var row = Math.floor((y - 100) / bricky);
     var col = Math.floor(x / brickx);
-    if (row < 0 || row >= 10 || col < 0 || col >= 10) {
-      return;
-    }
+    
     // not in the right area
-    if ((x+2) % brickx < 4 || (y+2) % bricky < 4) {
+    if (row < 0 || row >= 10 || col < 0 || col >= 10) {
       return;
     }
     // not quite in the brick--it's in the white border around a brick
     // otherwise, row and column give the brick number
+    if ((x+2) % brickx < 4 || (y+2) % bricky < 4) {
+      return;
+    }
+    // If there is no brick then there will be a ton of errors, hence
+    // the try catch block.  Try to get a brick, but if no match then
+    // do nothing.
     try {
       var brick = document.getElementsByClassName('row' + row.toString() + ' col' + col.toString());
       if (!brick[0].classList.contains('broken') && vy < 0) {
@@ -87,21 +95,27 @@
     }
   }
   
+  // If the ball has reached the bottom or the top then there will be 
+  // a win or a loss; both will refresh for a new game.
   function checkForWinOrLoss(y) {
     if (y < 50) {
       ball.classList.add('broken');
-      alert('You win');
       window.clearInterval(intervalID);
-      startNewGame();
+      alert('You win');
+      window.location.reload();
     }
     if (y > 570) {
       ball.classList.add('broken');
-      alert('You lose');
       window.clearInterval(intervalID);
-      startNewGame();
+      alert('You lose');
+      window.location.reload();
     }
   }
   
+  // Gets the balls old top and left positions and then calculates 
+  // new position based off the velocity, sets new values to move the ball
+  // then checks for collisions with the wall, bricks and paddle.  Then
+  // checks for a win or loss.
   function moveBall() {
     var oldX = parseInt(ball.style.left, 10);
     var oldY = parseInt(ball.style.top, 10);
@@ -118,6 +132,7 @@
     checkForWinOrLoss(newY);
   }
   
+  // Double for loop to set up bricks.
   function setUpBoard() {
     for (let i = 0; i < 10; i += 1) {
       for (let j = 0; j < 10; j += 1) {
@@ -128,6 +143,7 @@
     }
   }
   
+  // Adds paddle to board
   function addPaddle() {
     paddle.id = 'paddle';
     main.appendChild(paddle);
