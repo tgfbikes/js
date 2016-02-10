@@ -1,7 +1,7 @@
 'use strict';
 
 (function breakoutIIFE() {
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function ready() {
     var main = document.getElementById('main');
     var paddle = document.createElement('div');
     var ball = document.createElement('div');
@@ -31,6 +31,7 @@
     // Create ball and initialize its position on the board.  Remove
     // click handler so user can't make more than one ball.
     document.body.addEventListener('click', function createBall(evt) {
+      console.log('click fired');
       ball.id = 'ball';
       ball.style.left = 300;
       ball.style.top = 385;
