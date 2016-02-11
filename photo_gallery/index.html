@@ -2,16 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
   <script type="text/javascript" src="js/piclist.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
   <title>Photo Gallery</title>
 </head>
 <body>
-  
+  <div id="tabs">
+    <ul>
+      <li><a href="#fragment-0"><span>One</span></a></li>
+      <li><a href="#fragment-1"><span>Two</span></a></li>
+      <li><a href="#fragment-2"><span>Three</span></a></li>
+      <li><a href="#fragment-3"><span>Four</span></a></li>
+    </ul>
+    <div id="fragment-0">
+      <p>First tab is active by default:</p>
+    </div>
+    <div id="fragment-1">
+      <p>Second tab:</p>
+    </div>
+    <div id="fragment-2">
+      <p>Third tab:</p>
+    </div>
+    <div id="fragment-3">
+      <p>Fourth tab:</p>
+    </div>
+  </div>
 </body>
 </html>
