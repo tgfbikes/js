@@ -16,13 +16,21 @@
     return newPicList;
   }
   
+  function updateThumbSection(thumbArray) {
+    $('#thumbnails').empty();
+    thumbArray.forEach(function forEachThumb(elem) {
+      let img = $('<img></img>').attr('src', elem);
+      $('#thumbnails').append(img);
+    });
+  }
+  
   function createThumbArray(indexOfCategory) {
-    let thumb = [];
+    let thumbArray = [];
     let category = piclist[indexOfCategory];
     for (let catIndex in category) {
-      thumb.push(category[catIndex][1]);
+      thumbArray.push(category[catIndex][1]);
     }
-    console.log(thumb);
+    updateThumbSection(thumbArray);
   }
   
   function addNavClickHandlers() {
