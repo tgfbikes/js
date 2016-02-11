@@ -16,10 +16,15 @@
     return newPicList;
   }
   
+  function createPicArray(indexOfCategory) {
+    let category = piclist[indexOfCategory];
+    console.log(category);
+  }
+  
   function addNavClickHandlers() {
-    for (let i = 1; i < 5; i += 1) {
+    for (let i = 0; i < 4; i += 1) {
       $('#category' + i).click(function navClickHandler() {
-        console.log('click');
+        createPicArray(i);
       });
     }
   }
