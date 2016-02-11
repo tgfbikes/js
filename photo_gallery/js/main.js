@@ -5,29 +5,31 @@
   function configurePicURL() {
     let newPicList;
     for (let catIndex in piclist) {
-      let categoryArray= piclist[catIndex];
-      let fragment = ('#fragment-' + catIndex);
-      for (let imageIndex in categoryArray) {
-        let imagePair = categoryArray[imageIndex];
-        let fullImage = baseurl + imagePair[0];
-        let thumbImage = baseurl + imagePair[1];
-        $(fragment).append('<image src="' + thumbImage +'" >');
+      let category = piclist[catIndex];
+      for (let imageIndex in category) {
+        let imagePair = category[imageIndex];
+        imagePair[0] = baseurl + imagePair[0];
+        imagePair[1] = baseurl + imagePair[1];
       }
+    }
+    newPicList = piclist;
+    return newPicList;
+  }
+  
+  function addNavClickHandlers() {
+    for (let i = 1; i < 5; i += 1) {
+      $('#category' + i).click(function navClickHandler() {
+        console.log('click');
+      });
     }
   }
   
-  function setTabs() {
-    $('#tabs').tabs({
-      active: 0
-    });
-  }
-  
-  function addPicsToTabs(newPicList) {
-  }
   
   $(document).ready(function main() {
-    configurePicURL();
-    setTabs();
+    // Complete url to thumbnails and full images
+    let newPicList = configurePicURL();
+    // Add click handlers to anchor tags in navigation to update category
+    addNavClickHandlers();
   }); // document ready
   
 }()); // pictureGalleryIIFE
