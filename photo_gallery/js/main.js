@@ -16,15 +16,19 @@
     return newPicList;
   }
   
-  function createPicArray(indexOfCategory) {
+  function createThumbArray(indexOfCategory) {
+    let thumb = [];
     let category = piclist[indexOfCategory];
-    console.log(category);
+    for (let catIndex in category) {
+      thumb.push(category[catIndex][1]);
+    }
+    console.log(thumb);
   }
   
   function addNavClickHandlers() {
     for (let i = 0; i < 4; i += 1) {
       $('#category' + i).click(function navClickHandler() {
-        createPicArray(i);
+        createThumbArray(i);
       });
     }
   }
