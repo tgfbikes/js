@@ -9,35 +9,63 @@
   <script type="text/javascript" src="js/main.js"></script>
   <title>Photo Gallery</title>
   <style>
-    #thumbnails {
-      height: 80vh;
+    ul {
+      margin: 0;
+    }
+    #thumbnailsSection {
       overflow: auto;
     }
+    
+    #thumbnails li {
+      display: inline;
+    }
     #thumbnails img {
-      display: block;
+      width: 100px;
+      height: 80px;
+    }
+    
+    #nav-logo {
+      padding: 40px 0;
+    }
+    
+    #nav-logo h4{
+      margin: 0 0 0 30px;
+    }
+    
+    main {
+      padding: 0 0 0 240px;
+    }
+    
+    #full-images {
+      height: 80vh;
     }
   
   </style>
 </head>
 <body>
   <header>
-    <nav>
-      <div class="nav-wrapper">
-        <a href="index.html" class="brand-logo">Photo Gallery</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="#" id="category0">Category 1</a></li>
-          <li><a href="#" id="category1">Category 2</a></li>
-          <li><a href="#" id="category2">Category 3</a></li>
-          <li><a href="#" id="category3">Category 4</a></li>
-        </ul>
+    <section class="side-nav fixed grey lighten-4">
+      <div id="nav-logo" class="green lighten-1">
+        <h4>Pick a Pic</h4>
       </div>
-    </nav>
+      <ul id="nav-mobile">
+        <li><a href="#" id="category0">Category 1</a></li>
+        <li><a href="#" id="category1">Category 2</a></li>
+        <li><a href="#" id="category2">Category 3</a></li>
+        <li><a href="#" id="category3">Category 4</a></li>
+      </ul>
+    </section>
   </header>
   <main>
-    <section id="full-images">
-      <h1>full image</h1>
-    </section>
-    <section id="thumbnails"></section>
+    <div>
+      <section class="" id="full-images">
+        <h1>full image</h1>
+      </section>
+      <section id="thumbnailsSection">
+        <ul id="thumbnails">
+        </ul>
+      </section>
+    </div>
   </main>
 </body>
 </html>
