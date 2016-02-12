@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.9/slick.css"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.9/slick.min.js"></script>
   <script type="text/javascript" src="js/piclist.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
   <title>Photo Gallery</title>
@@ -12,18 +14,21 @@
     ul {
       margin: 0;
     }
+    
     #thumbnailsSection {
       overflow: auto;
     }
     
     #thumbnailsSection ul {
-      width: 3000px;
+      width: 100%;
       overflow: scroll;
     }
     
     #thumbnails li {
       display: inline;
+      margin: 0 10px;
     }
+    
     #thumbnails img {
       width: 100px;
       height: 80px;
@@ -52,7 +57,6 @@
     #full-images #title h3 {
       margin: 0 0 0 30px;
     }
-  
   </style>
 </head>
 <body>
