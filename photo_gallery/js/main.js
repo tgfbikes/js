@@ -15,7 +15,8 @@
   }
   
   function handleThumbClick() {
-    console.log('click');
+    let img = $(this.innerHTML);
+    console.log(img.attr('src'));
   }
   
   function updateThumbSection(thumbArray) {
