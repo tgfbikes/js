@@ -3,13 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
-  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.9/slick.css"/>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
-  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.9/slick.min.js"></script>
-  <script type="text/javascript" src="js/piclist.js"></script>
-  <script type="text/javascript" src="js/main.js"></script>
-  <title>Photo Gallery</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <title>Pick a Pic</title>
   <style>
     ul {
       margin: 0;
@@ -19,19 +14,19 @@
       overflow: auto;
     }
     
-    #thumbnailsSection ul {
+    #thumbnailsSection > div{
       width: 100%;
       overflow: scroll;
     }
     
-    #thumbnails li {
+    #thumbnails div {
       display: inline;
-      margin: 0 10px;
     }
     
     #thumbnails img {
       width: 100px;
       height: 80px;
+      margin: 10px;
     }
     
     #nav-logo {
@@ -47,7 +42,7 @@
     }
     
     #full-images {
-      height: 80vh;
+      height: 200px;
     }
     
     #full-images #title {
@@ -63,7 +58,7 @@
   <header>
     <section class="side-nav fixed grey lighten-4">
       <div id="nav-logo" class="green lighten-1">
-        <h5>Pick and pic</h5>
+        <h5>Select a Category</h5>
       </div>
       <ul id="nav-mobile">
         <li><a href="#" id="category0">Category 1</a></li>
@@ -77,14 +72,18 @@
     <div>
       <section id="full-images">
         <div id="title" class="light-green">
-          <h3>Pictures and junk</h3>
+          <h3>Pick a Pic</h3>
         </div>
       </section>
       <section id="thumbnailsSection">
-        <ul id="thumbnails">
-        </ul>
+        <div id="thumbnails">
+        </div>
       </section>
     </div>
   </main>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+  <script type="text/javascript" src="js/piclist.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

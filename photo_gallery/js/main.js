@@ -20,8 +20,8 @@
     $('#thumbnails').empty();
     thumbArray.forEach(function forEachThumb(elem) {
       let img = $('<img></img>').attr('src', elem);
-      let li = $('<li></li>').append(img);
-      $('#thumbnails').append(li);
+      let div = $('<div></div>').append(img);
+      $('#thumbnails').append(div);
     });
   }
   
