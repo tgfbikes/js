@@ -12,15 +12,17 @@
         imagePair[1] = baseurl + imagePair[1];
       }
     }
-    newPicList = piclist;
-    return newPicList;
+  }
+  
+  function handleThumbClick() {
+    console.log('click');
   }
   
   function updateThumbSection(thumbArray) {
     $('#thumbnails').empty();
     thumbArray.forEach(function forEachThumb(elem) {
       let img = $('<img></img>').attr('src', elem);
-      let div = $('<div></div>').append(img);
+      let div = $('<div></div>').append(img).click(handleThumbClick);
       $('#thumbnails').append(div);
     });
   }
@@ -45,7 +47,7 @@
   
   $(document).ready(function main() {
     // Complete url to thumbnails and full images
-    let newPicList = configurePicURL();
+    configurePicURL();
     // Add click handlers to anchor tags in navigation to update category
     addNavClickHandlers();
   }); // document ready

@@ -19,6 +19,10 @@
       overflow: scroll;
     }
     
+    #thumbnails {
+      padding: 15px;
+    }
+    
     #thumbnails div {
       display: inline;
     }
@@ -29,11 +33,15 @@
       margin: 10px;
     }
     
+    #thumbnails h2 {
+      margin: 15px 0 0 15px;
+    }
+    
     #nav-logo {
       padding: 40px 0;
     }
     
-    #nav-logo h5{
+    #nav-logo i{
       margin: 0 0 0 30px;
     }
     
@@ -42,7 +50,7 @@
     }
     
     #full-images {
-      height: 200px;
+      height: 175px;
     }
     
     #full-images #title {
@@ -50,7 +58,7 @@
     }
     
     #full-images #title h3 {
-      margin: 0 0 0 30px;
+      margin: 20px 0 0 30px;
     }
   </style>
 </head>
@@ -58,7 +66,7 @@
   <header>
     <section class="side-nav fixed grey lighten-4">
       <div id="nav-logo" class="green lighten-1">
-        <h5>Select a Category</h5>
+        <i class="large material-icons">picture_in_picture</i>
       </div>
       <ul id="nav-mobile">
         <li><a href="#" id="category0">Category 1</a></li>
@@ -70,13 +78,14 @@
   </header>
   <main>
     <div>
-      <section id="full-images">
-        <div id="title" class="light-green">
+      <section id="full-images" class="light-green">
+        <div id="title">
           <h3>Pick a Pic</h3>
         </div>
       </section>
       <section id="thumbnailsSection">
         <div id="thumbnails">
+          <h2>Welcome, pick a category</h2>
         </div>
       </section>
     </div>
