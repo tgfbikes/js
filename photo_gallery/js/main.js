@@ -14,9 +14,14 @@
     }
   }
   
+  function getFullImgURL(thumbSrc) {
+    return thumbSrc.replace(/thumbs/, 'medium');
+  }
+  
   function handleThumbClick() {
     let img = $(this.innerHTML);
-    console.log(img.attr('src'));
+    let fullImg = getFullImgURL(img.attr('src'));
+    $('#full-images #full-image').append(fullImg);
   }
   
   function updateThumbSection(thumbArray) {
@@ -47,6 +52,7 @@
   
   
   $(document).ready(function main() {
+
     // Complete url to thumbnails and full images
     configurePicURL();
     // Add click handlers to anchor tags in navigation to update category
