@@ -16,15 +16,20 @@
   
   function getFullImgURL(thumbSrc) {
     let fullImgURL = thumbSrc.replace(/thumbs/, 'medium');
-    let fullImg = $('<img></img>').attr('src', fullImgURL);
+    let fullImg = $('<img></img>').attr('src', fullImgURL).addClass('materialboxed');
     return fullImg;
   }
   
   function handleThumbClick() {
-    $('#full-images #full-image').empty();
+    // If there is a full image already, remove it and replace with new image
+    $('#full-images').empty();
+    // Get img tag
     let img = $(this.innerHTML);
+    // Pass thumbnail src string to getFullImgURL to get the full img url and img tag
     let fullImg = getFullImgURL(img.attr('src'));
-    $('#full-images #full-image').append(fullImg);
+    $('#full-images').append(fullImg);
+    $('.materialboxed').materialbox();
+
   }
   
   function updateThumbSection(thumbArray) {
