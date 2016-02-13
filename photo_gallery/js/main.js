@@ -22,14 +22,21 @@
   
   function handleThumbClick() {
     // If there is a full image already, remove it and replace with new image
-    $('#full-images').empty();
+    $('.card-image').empty();
     // Get img tag
     let img = $(this.innerHTML);
     // Pass thumbnail src string to getFullImgURL to get the full img url and img tag
     let fullImg = getFullImgURL(img.attr('src'));
-    $('#full-images').append(fullImg);
+    $('.card-image').append(fullImg);
     $('.materialboxed').materialbox();
 
+  }
+  
+  function showFirstThumb(firstThumb) {
+    let fullImg = getFullImgURL(firstThumb);
+    $('.card-image').empty();
+    $('.card-image').append(fullImg);
+    $('.materialboxed').materialbox();
   }
   
   function updateThumbSection(thumbArray) {
@@ -39,6 +46,7 @@
       let div = $('<div></div>').append(img).click(handleThumbClick);
       $('#thumbnails').append(div);
     });
+    showFirstThumb(thumbArray[0]);
   }
   
   function createThumbArray(indexOfCategory) {
@@ -58,6 +66,9 @@
     }
   }
   
+  function initializePage() {
+    createThumbArray(0);
+  }
   
   $(document).ready(function main() {
 
@@ -65,6 +76,8 @@
     configurePicURL();
     // Add click handlers to anchor tags in navigation to update category
     addNavClickHandlers();
+    // Initialize page with category 1 thumbnails
+    initializePage();
   }); // document ready
   
 }()); // pictureGalleryIIFE

@@ -55,17 +55,17 @@
     }
     
     #full-images {
-      padding: 30px 0 0 0;
-      height: 60vh;
+      padding: 30px 0 0 30px;
+      height: 600px;
     }
     
-    #full-images h2 {
-      margin: 15px 0 0 15px;
+    #full-images h5 {
+      margin-top: 280px;
     }
     
     #full-images img {
-      height: 600px;
-      width:auto;
+      max-height: 545px;
+      width: auto;
     }
   </style>
 </head>
@@ -89,12 +89,22 @@
     </section>
     <div class="container">
       <div class="row">
-        <section id="full-images" class="col s10 offset-s1">
-          <h2>Welcome, pick a category</h2>
+        <section id="full-images" class="col s10">
+          <div class="row">
+            <div class="col s3 left">
+              <h5>Click on the selected image to enlarge</h5>
+            </div>
+            <div class="col s9 right">
+              <div class="card">
+                <div class="card-image">
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
       </div>
       <div class="row">
-        <section id="thumbnailsSection" class="col s12">
+        <section id="thumbnailsSection" class="col s10 center-align">
           <div id="thumbnails">
           </div>
         </section>
