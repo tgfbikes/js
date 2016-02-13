@@ -15,10 +15,13 @@
   }
   
   function getFullImgURL(thumbSrc) {
-    return thumbSrc.replace(/thumbs/, 'medium');
+    let fullImgURL = thumbSrc.replace(/thumbs/, 'medium');
+    let fullImg = $('<img></img>').attr('src', fullImgURL);
+    return fullImg;
   }
   
   function handleThumbClick() {
+    $('#full-images #full-image').empty();
     let img = $(this.innerHTML);
     let fullImg = getFullImgURL(img.attr('src'));
     $('#full-images #full-image').append(fullImg);
