@@ -20,7 +20,7 @@
     return fullImg;
   }
   
-  function handleThumbClick() {
+  function handleThumbClick(evt) {
     // If there is a full image already, remove it and replace with new image
     $('.card-image').empty();
     // Get img tag
@@ -40,13 +40,13 @@
   }
   
   function updateThumbSection(thumbArray) {
-    $('#thumbnails').empty();
+    $('.slides').empty();
     thumbArray.forEach(function forEachThumb(elem) {
       let img = $('<img></img>').attr('src', elem);
-      let div = $('<div></div>').addClass('carousel-item').append(img).click(handleThumbClick);
-      $('#thumbnails').append(div);
+      let li = $('<li></li>').append(img).click(handleThumbClick);
+      $('.slides').append(li);
     });
-    $('.carousel').carousel();
+    $('.slider').slider();
     showFirstThumb(thumbArray[0]);
   }
   
@@ -61,7 +61,8 @@
   
   function addNavClickHandlers() {
     for (let i = 0; i < 4; i += 1) {
-      $('#category' + i).click(function navClickHandler() {
+      $('#category' + i).click(function navClickHandler(evt) {
+        evt.preventDefault();
         createThumbArray(i);
       });
     }
