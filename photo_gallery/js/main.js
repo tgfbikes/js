@@ -43,9 +43,10 @@
     $('#thumbnails').empty();
     thumbArray.forEach(function forEachThumb(elem) {
       let img = $('<img></img>').attr('src', elem);
-      let div = $('<div></div>').append(img).click(handleThumbClick);
+      let div = $('<div></div>').addClass('carousel-item').append(img).click(handleThumbClick);
       $('#thumbnails').append(div);
     });
+    $('.carousel').carousel();
     showFirstThumb(thumbArray[0]);
   }
   
