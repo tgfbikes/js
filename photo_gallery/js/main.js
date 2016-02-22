@@ -27,7 +27,8 @@
     let img = $(this.innerHTML);
     // Pass thumbnail src string to getFullImgURL to get the full img url and img tag
     let fullImg = getFullImgURL(img.attr('src'));
-    $('.card-image').append(fullImg);
+    // Append full image to div with .card-image class
+    $('.card-image').fadeIn
     $('.materialboxed').materialbox();
 
   }
@@ -40,13 +41,12 @@
   }
   
   function updateThumbSection(thumbArray) {
-    $('.slides').empty();
+    $('#thumbnails').empty();
     thumbArray.forEach(function forEachThumb(elem) {
       let img = $('<img></img>').attr('src', elem);
-      let li = $('<li></li>').append(img).click(handleThumbClick);
-      $('.slides').append(li);
+      let div = $('<div></div>').append(img).click(handleThumbClick);
+      $('#thumbnails').append(div);
     });
-    $('.slider').slider();
     showFirstThumb(thumbArray[0]);
   }
   

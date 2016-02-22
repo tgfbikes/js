@@ -28,9 +28,13 @@
     }
     
     #thumbnails img {
-      width: 250px;
+      max-width: 50px;
       height: auto;
       margin: 10px;
+    }
+    
+    .thumb-border {
+      border: 1px solid red;
     }
     
     #nav-logo {
@@ -83,29 +87,19 @@
     <section id="title" class="light-green">
         <h3>Pick a Pic</h3>
     </section>
-    <div class="container">
-      <div class="row">
-        <section id="full-images" class="col s10">
-          <div class="row valign-wrapper">
-            <div class="valign col s3 left">
-                <h5>Click on the selected image to enlarge</h5>
-            </div>
-            <div class="col s9 right">
-              <div class="card">
-                <div class="card-image">
-                </div>
-              </div>
+    <div>
+      <section id="full-images" class="row">
+        <div id="thumbnailsSection" class="col s3 center-align">
+          <div id="thumbnails">
+          </div>
+        </div>
+        <div class="col s9 right">
+          <div class="card">
+            <div class="card-image">
             </div>
           </div>
-        </section>
-      </div>
-      <div class="row">
-        <section id="thumbnailsSection" class="col s10 center-align">
-          <div id="thumbnails" class="slider">
-            <ul class="slides"></ul>
-          </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </div>
   </main>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
