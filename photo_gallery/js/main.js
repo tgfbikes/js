@@ -4,10 +4,15 @@
   
   function configurePicURL() {
     let newPicList;
+    // iterate over category arrays
     for (let catIndex in piclist) {
+      // capture the category
       let category = piclist[catIndex];
+      // iterate over the images within the category
       for (let imageIndex in category) {
+        // capture the full and thumbnail images
         let imagePair = category[imageIndex];
+        // append the baseurl to full image and the thumbnail image
         imagePair[0] = baseurl + imagePair[0];
         imagePair[1] = baseurl + imagePair[1];
       }
@@ -61,7 +66,7 @@
   
   function addNavClickHandlers() {
     for (let i = 3; i >= 0; i -= 1) {
-      $('#category' + j).click(function navClickHandler() {
+      $('#category' + i).click(function navClickHandler() {
         createThumbArray(j);
       });
     }
