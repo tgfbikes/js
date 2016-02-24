@@ -28,7 +28,7 @@
     // Pass thumbnail src string to getFullImgURL to get the full img url and img tag
     let fullImg = getFullImgURL(img.attr('src'));
     // Append full image to div with .card-image class
-    $('.card-image').fadeIn
+    $('.card-image').append(fullImg);
     $('.materialboxed').materialbox();
 
   }
@@ -60,10 +60,9 @@
   }
   
   function addNavClickHandlers() {
-    for (let i = 0; i < 4; i += 1) {
-      $('#category' + i).click(function navClickHandler(evt) {
-        evt.preventDefault();
-        createThumbArray(i);
+    for (let i = 3; i >= 0; i -= 1) {
+      $('#category' + j).click(function navClickHandler() {
+        createThumbArray(j);
       });
     }
   }
