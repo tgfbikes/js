@@ -13,31 +13,20 @@
       margin: 0;
     }
     
-    #thumbnailsSection {
+    #thumbnails {
       overflow: auto;
     }
     
-    #thumbnailsSection > div{
-      width: 100%;
-      overflow: scroll;
-    }
-    
-    #thumbnails {
-      padding: 15px;
-    }
-    
     #thumbnails div {
-      display: inline;
+      display: inline-block;
+      background-color: black;
+      height: 38px;
+      margin: 10px;
     }
     
     #thumbnails img {
       max-width: 50px;
       height: auto;
-      margin: 10px;
-    }
-    
-    .thumb-border {
-      border: 1px solid red;
     }
     
     #nav-logo {
@@ -59,18 +48,24 @@
       margin: 20px 0 0 30px;
     }
     
+    #full-image {
+      margin-top: 30px;
+    }
+    
     #sticky-footer {
       padding: 20px;
       position: fixed;
       left: 0;
       bottom: 0;
-      height: 175px;
-      width: 88%;
+      height: 165px;
+      widows: 84%;
       margin: 0 0 0 240px;
+      overflow: scroll;
     }
     
     .active-thumb {
-      border: 1px solid red;
+      border: 2px solid #76ff03;
+      opacity: .6;
     }
     
   </style>
@@ -81,7 +76,7 @@
       <div id="nav-logo" class="green lighten-1">
         <i class="large material-icons">picture_in_picture</i>
       </div>
-      <ul id="nav-mobile">
+      <ul>
         <li><a href="#" id="category0">Category 1</a></li>
         <li><a href="#" id="category1">Category 2</a></li>
         <li><a href="#" id="category2">Category 3</a></li>
@@ -95,18 +90,18 @@
     </section>
     <div class="container">
       <section class="row">
-        <div class="col s10 offset-s1">
+        <div class="col s8 offset-s2">
           <div class="card">
-            <div id="full-images" class="card-image">
+            <div id="full-image" class="card-image">
             </div>
           </div>
         </div>
       </section>
-      <section id="sticky-footer" class="grey lighten-2">
-        <div id="thumbnailsSection">
-          <div id="thumbnails" class="center-align">
+      <section id="sticky-footer" class="grey lighten-2 row">
+          <div id="thumbnailsSection" class="col s11 offset-s1">
+            <div id="thumbnails" class="">
+            </div>
           </div>
-        </div>
       </section>
     </div>
   </main>
