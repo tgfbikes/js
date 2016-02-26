@@ -26,9 +26,21 @@
     return fullImg;
   }
   
+  function setThumbActive(img) {
+    // Get all images
+    let thumbnails = $('#thumbnails div img');
+    thumbnails.each(function findActiveThumb(index) {
+      if ($(thumbnails[index]).hasClass('active-thumb')) {
+        $(thumbnails[index]).removeClass('active-thumb');
+      }
+    });
+    $(img).addClass('active-thumb');
+  }
+  
   function handleThumbClick(evt) {
     // Get img tag
     let img = $(this.innerHTML);
+    setThumbActive(evt.target);
     // Pass thumbnail src string to getFullImgURL to get the full img url and img tag
     let fullImg = getFullImgURL(img.attr('src'));
     // Append full image to div with .card-image class
