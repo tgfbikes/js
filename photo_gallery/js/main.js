@@ -15,6 +15,7 @@
         // append the baseurl to full image and the thumbnail image
         imagePair[0] = baseurl + imagePair[0];
         imagePair[1] = baseurl + imagePair[1];
+        // now picList has the url concatinated with the image src
       }
     }
   }
@@ -67,7 +68,7 @@
   function addNavClickHandlers() {
     for (let i = 3; i >= 0; i -= 1) {
       $('#category' + i).click(function navClickHandler() {
-        createThumbArray(j);
+        createThumbArray(i);
       });
     }
   }
