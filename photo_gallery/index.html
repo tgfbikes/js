@@ -6,6 +6,9 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <title>Pick a Pic</title>
   <style>
+    html {
+      position: relative;
+    }
     ul {
       margin: 0;
     }
@@ -38,19 +41,17 @@
     }
     
     #nav-logo {
-      padding: 40px 0;
-    }
-    
-    #nav-logo i{
-      margin: 0 0 0 30px;
+      height: 125px;
+      padding: 20px 0 0 20px;
     }
     
     main {
       padding: 0 0 0 240px;
+      min-height: 100vh;
     }
     
     #title {
-      height: 175px;
+      height: 125px;
       padding: 30px 0;
     }
     
@@ -58,15 +59,16 @@
       margin: 20px 0 0 30px;
     }
     
-    #full-images {
-      padding: 30px 0 0 30px;
-      height: auto;
+    #sticky-footer {
+      padding: 20px;
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      height: 175px;
+      width: 88%;
+      margin: 0 0 0 240px;
     }
     
-    #full-images img {
-      max-height: auto;
-      width: 100%;
-    }
   </style>
 </head>
 <body>
@@ -87,16 +89,18 @@
     <section id="title" class="light-green">
         <h3>Pick a Pic</h3>
     </section>
-    <div>
-      <section id="full-images" class="row">
-        <div id="thumbnailsSection" class="col s3 center-align">
-          <div id="thumbnails">
+    <div class="container">
+      <section class="row">
+        <div class="col s10 offset-s1">
+          <div class="card">
+            <div id="full-images" class="card-image">
+            </div>
           </div>
         </div>
-        <div class="col s9 right">
-          <div class="card">
-            <div class="card-image">
-            </div>
+      </section>
+      <section id="sticky-footer" class="grey lighten-2">
+        <div id="thumbnailsSection">
+          <div id="thumbnails" class="center-align">
           </div>
         </div>
       </section>

@@ -27,14 +27,12 @@
   }
   
   function handleThumbClick(evt) {
-    // If there is a full image already, remove it and replace with new image
-    $('.card-image').empty();
     // Get img tag
     let img = $(this.innerHTML);
     // Pass thumbnail src string to getFullImgURL to get the full img url and img tag
     let fullImg = getFullImgURL(img.attr('src'));
     // Append full image to div with .card-image class
-    $('.card-image').append(fullImg);
+    $('.card-image img').replaceWith(fullImg);
     $('.materialboxed').materialbox();
 
   }
