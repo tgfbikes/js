@@ -46,7 +46,11 @@
     // Pass thumbnail src string to getFullImgURL to get the full img url and img tag
     let fullImg = getFullImgURL(img.attr('src'));
     // Append full image to div with .card-image class
-    $('.card-image img').replaceWith(fullImg);
+    $('.card-image img')
+      .fadeOut('fast')
+      .replaceWith( function() {
+        return $(fullImg).fadeIn('fast');
+      });
     $('.materialboxed').materialbox();
 
   }
