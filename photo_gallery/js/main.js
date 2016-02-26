@@ -29,11 +29,13 @@
   function setThumbActive(img) {
     // Get all images
     let thumbnails = $('#thumbnails div img');
+    // For each image check to see if it has active-thumb class, if so remove it
     thumbnails.each(function findActiveThumb(index) {
       if ($(thumbnails[index]).hasClass('active-thumb')) {
         $(thumbnails[index]).removeClass('active-thumb');
       }
     });
+    // Add active-thumb class to the image that was recently clicked
     $(img).addClass('active-thumb');
   }
   
