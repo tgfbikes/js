@@ -53,6 +53,7 @@
   
   function showFirstThumb(firstThumb) {
     let fullImg = getFullImgURL(firstThumb);
+    $('#thumbnails div img').first().addClass('active-thumb');
     $('.card-image').empty();
     $('.card-image').append(fullImg);
     $('.materialboxed').materialbox();
