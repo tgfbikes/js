@@ -49,7 +49,9 @@
     $('.card-image img')
       .fadeOut('fast')
       .replaceWith( function() {
-        return $(fullImg).fadeIn('fast');
+        return $(fullImg).fadeIn('fast').queue( function() {
+          $(fullImg).css('display', '').dequeue();
+        });
       });
     $('.materialboxed').materialbox();
 
