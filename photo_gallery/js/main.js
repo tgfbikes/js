@@ -90,6 +90,15 @@
         createThumbArray(i);
       });
     }
+    
+    $('#slide-show').click(function slideShowClickHandler() {
+      $('#thumbnails div img').each(function slideShow(i) {
+        let thumb = $(this);
+        setTimeout(function slideShowInterval() {
+          thumb.trigger('click');
+        }, 2000 * (i + 1));
+      });
+    });
   }
   
   function initializePage() {
