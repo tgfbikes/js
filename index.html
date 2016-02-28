@@ -11,36 +11,36 @@
       display: inline-block;
       margin: 20px;
     }
-    #category1 {
+    #category0 {
       background-color: aqua;
     }
-    #category2 {
+    #category1 {
       background-color: blue;
     }
-    #category3 {
+    #category2 {
       background-color: gray;
     }
   </style>
 </head>
 <body>
+  <div id="category0"></div>
   <div id="category1"></div>
   <div id="category2"></div>
-  <div id="category3"></div>
   <script>
   'use strict';
-//    for (var i = 0; i < 4; i += 1) {
-//      (function(j) {
-//        $('#category' + j).click(function navClickHandler() {
-//          console.log(j);
-//        });
-//      }(i));
-//    }
-    // the let key word will stay with the scope for each click handler
-    for (let i = 0; i < 4; i += 1) {
-      $('#category' + i).click(function navClickHandler() {
-        console.log(i);
-      });
+    for (var i = 0; i < 4; i += 1) {
+      (function(j) {
+        $('#category' + j).click(function navClickHandler() {
+          console.log(j);
+        });
+      }(i));
     }
+    // the let key word will stay with the scope for each click handler
+//    for (var i = 0; i < 3; i += 1) {
+//      $('#category' + i).click(function navClickHandler() {
+//        console.log(i);
+//      });
+//    }
   </script>
 </body>
 </html>
