@@ -91,13 +91,28 @@
       });
     }
     
+    
     $('#slide-show').click(function slideShowClickHandler() {
-      $('#thumbnails div img').each(function slideShow(i) {
-        let thumb = $(this);
-        setTimeout(function slideShowInterval() {
-          thumb.trigger('click');
-        }, 2000 * (i + 1));
-      });
+      let index = 0;
+      let $thumbArray = $('#thumbnails div img');
+      
+      function slideShow() {
+        $thumbArray
+          .eq(index)
+          .trigger('click');
+
+        if (++index >= $thumbArray.length) {
+          index = 0;
+        }
+      }
+      
+      setInterval(slideShow, 2000);
+//      $('#thumbnails div img').each(function slideShow(i) {
+//        let thumb = $(this);
+//        setTimeout(function slideShowInterval() {
+//          thumb.trigger('click');
+//        }, 2000 * (i + 1));
+//      });
     });
   }
   
