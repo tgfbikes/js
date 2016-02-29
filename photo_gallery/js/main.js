@@ -4,16 +4,11 @@
   
   function configurePicURL() {
     let newPicList;
-    // iterate over category arrays
-    for (let catIndex in piclist) {
-      // capture the category
-      let category = piclist[catIndex];
-      // iterate over the images within the category
-      for (let imageIndex in category) {
-        // capture the full and thumbnail images
-        let imagePair = category[imageIndex];
-        // append the baseurl to full image and the thumbnail image
-        imagePair[0] = baseurl + imagePair[0];
+    for (let catIndex in piclist) {            // Iterate over category arrays
+      let category = piclist[catIndex];        // Capture the category
+      for (let imageIndex in category) {       // Iterate over the images within the category
+        let imagePair = category[imageIndex];  // Capture the full and thumbnail images
+        imagePair[0] = baseurl + imagePair[0]; // Append the baseurl to full image and the thumbnail image
         imagePair[1] = baseurl + imagePair[1];
         // now picList has the url concatinated with the image src
       }
@@ -21,76 +16,71 @@
   }
   
   function getFullImgURL(thumbSrc) {
-    let fullImgURL = thumbSrc.replace(/thumbs/, 'medium');
-    let fullImg = $('<img></img>').attr('src', fullImgURL).addClass('materialboxed');
+    let fullImgURL = thumbSrc.replace(/thumbs/, 'medium');                            // Replace thumbs in url string with medium
+    let fullImg = $('<img></img>').attr('src', fullImgURL).addClass('materialboxed'); // Configure full img
     return fullImg;
   }
   
   function setThumbActive(img) {
-    // Get all images
-    let thumbnails = $('#thumbnails div img');
-    // For each image check to see if it has active-thumb class, if so remove it
-    thumbnails.each(function findActiveThumb(index) {
+    let thumbnails = $('#thumbnails div img');        // Get all thumbnails
+    thumbnails.each(function findActiveThumb(index) { // For each image check to see if it has active-thumb class, if so remove it
       if ($(thumbnails[index]).hasClass('active-thumb')) {
         $(thumbnails[index]).removeClass('active-thumb');
       }
     });
-    // Add active-thumb class to the image that was recently clicked
-    $(img).addClass('active-thumb');
+    $(img).addClass('active-thumb'); // Add active-thumb class to the image that was reently clicked
   }
   
   function handleThumbClick(evt) {
-    // Get img tag
-    let img = $(this.innerHTML);
-    setThumbActive(evt.target);
-    // Pass thumbnail src string to getFullImgURL to get the full img url and img tag
-    let fullImg = getFullImgURL(img.attr('src'));
-    // Append full image to div with .card-image class
-    $('.card-image img')
-      .fadeOut('fast')
-      .replaceWith( function() {
-        return $(fullImg).fadeIn('fast').queue( function() {
-          $(fullImg).css('display', '').dequeue();
+    let $img = $(this.innerHTML);                  // Get img tag
+    let fullImg = getFullImgURL($img.attr('src')); // Configure full image associated with thumbnail
+    
+    setThumbActive(evt.target);                    // Pass thumbnail img to set it to active
+    
+    $('.card-image img')                           // Get current full img
+      .fadeOut('fast')                             // Fade img out
+      .replaceWith( function() {                   // replace with new full img
+        return $(fullImg)                
+          .fadeIn('fast')                          // Fade new full img in fast
+          .queue( function() {                     // Add css to queue
+          $(fullImg).css('display', '').dequeue(); // Set img display to nothing to override default which is to make display inline
         });
       });
-    $('.materialboxed').materialbox();
+    $('.materialboxed').materialbox();             // Initialise materialize box for full img
 
   }
   
   function showFirstThumb(firstThumb) {
-    let fullImg = getFullImgURL(firstThumb);
-    $('#thumbnails div img').first().addClass('active-thumb');
-    $('.card-image').empty();
-    $('.card-image').append(fullImg);
-    $('.materialboxed').materialbox();
+    let fullImg = getFullImgURL(firstThumb); // Configure full image url
+    $('#thumbnails div img')                 // Get the first thumbnail and add class active-thumb
+      .first()
+      .addClass('active-thumb');
+    $('.card-image').empty();                // Remove full image
+    $('.card-image').append(fullImg);        // Append current full image
+    $('.materialboxed').materialbox();       // When full image is clicked, Materialize will create modal
   }
   
   function updateThumbSection(thumbArray) {
-    $('#thumbnails').empty();
-    thumbArray.forEach(function forEachThumb(elem) {
-      let img = $('<img></img>').attr('src', elem);
-      let div = $('<div></div>').append(img).click(handleThumbClick);
-      $('#thumbnails').append(div);
+    $('#thumbnails').empty();                          // Remove all thumbnails of last category
+    thumbArray.forEach(function forEachThumb(elem) {   // Iterate over all current thumbnails
+      let $img = $('<img></img>').attr('src', elem);   // Create img tag for thumnails and configure src
+      let $div = $('<div></div>').append($img).click(handleThumbClick); // Append thumbnail to containing div and establish click handler
+      $('#thumbnails').append($div);                   // Append div into thumbnails div
     });
-    showFirstThumb(thumbArray[0]);
+    showFirstThumb(thumbArray[0]);                     // Take first thumbnail and show full image
   }
   
   function createThumbArray(indexOfCategory) {
-    let thumbArray = [];
-    let category = piclist[indexOfCategory];
-    for (let catIndex in category) {
-      thumbArray.push(category[catIndex][1]);
+    let thumbArray = [];                      // Initialize array
+    let category = piclist[indexOfCategory];  // Get category
+    for (let catIndex in category) {          // Iterate over the category
+      thumbArray.push(category[catIndex][1]); // Get the thumbnails and push them to the array
     }
-    updateThumbSection(thumbArray);
-  }
-  
-  function slideShowInterval(func, time) {
-    setInterval(func, time);
+    updateThumbSection(thumbArray);           // Update the thumbnails section
   }
   
   function addNavClickHandlers() {
-    // Iterate over all category li's and add click handler to each
-    for (let i = 3; i >= 0; i -= 1) {
+    for (let i = 3; i >= 0; i -= 1) { // Iterate over all category li's and add click handler to each
       $('#category' + i).click(function navClickHandler() {
         createThumbArray(i);
       });
@@ -119,8 +109,11 @@
         .unbind('click')                            // Remove current click handler
         .click(function stopSlideShowHandler() {    // Add click handler to stop interval and change button
           clearInterval(interval);
-          $('#slide-show span').html('Start Slide Show');
-          $('#slide-show').addClass('green accent-2').click(slideShowClickHandler); // reapply the original click handler
+          $('#slide-show span')
+            .html('Start Slide Show');
+          $('#slide-show')
+            .addClass('green accent-2')
+            .click(slideShowClickHandler); // reapply the original click handler
       });
       $('#slide-show span')
         .html('Stop Slide Show');
@@ -133,12 +126,9 @@
   
   $(document).ready(function main() {
 
-    // Complete url to thumbnails and full images
-    configurePicURL();
-    // Add click handlers to anchor tags in navigation to update category
-    addNavClickHandlers();
-    // Initialize page with category 1 thumbnails
-    initializePage();
+    configurePicURL();     // Complete url to thumbnails and full images
+    addNavClickHandlers(); // Add click handlers to anchor tags in navigation to update category
+    initializePage();      // Initialize page with category 1 thumbnails
   }); // document ready
   
 }()); // pictureGalleryIIFE
