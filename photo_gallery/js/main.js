@@ -84,35 +84,46 @@
     updateThumbSection(thumbArray);
   }
   
+  function slideShowInterval(func, time) {
+    setInterval(func, time);
+  }
+  
   function addNavClickHandlers() {
+    // Iterate over all category li's and add click handler to each
     for (let i = 3; i >= 0; i -= 1) {
       $('#category' + i).click(function navClickHandler() {
         createThumbArray(i);
       });
     }
     
-    
+    // Slide show button main click handler
     $('#slide-show').click(function slideShowClickHandler() {
-      let index = 0;
-      let $thumbArray = $('#thumbnails div img');
+      let interval = setInterval(slideShow, 2000); // Start interval
+      let index = 0;                               // Initialize index
+      let $thumbArray = $('#thumbnails div img');  // Get all current thumbnails
       
       function slideShow() {
         $thumbArray
-          .eq(index)
-          .trigger('click');
+          .eq(index) // eq selects the element at the given index
+          .trigger('click'); // trigger a psuedo click event
 
+        // If the last thumbnail is passed, go the beginning
         if (++index >= $thumbArray.length) {
           index = 0;
         }
       }
       
-      setInterval(slideShow, 2000);
-//      $('#thumbnails div img').each(function slideShow(i) {
-//        let thumb = $(this);
-//        setTimeout(function slideShowInterval() {
-//          thumb.trigger('click');
-//        }, 2000 * (i + 1));
-//      });
+      $('#slide-show')                              // Get button
+        .removeClass('green accent-2')              // Remove green color  
+        .addClass('red accent-2')                   // Add red color
+        .unbind('click')                            // Remove current click handler
+        .click(function stopSlideShowHandler() {    // Add click handler to stop interval and change button
+          clearInterval(interval);
+          $('#slide-show span').html('Start Slide Show');
+          $('#slide-show').addClass('green accent-2').click(slideShowClickHandler); // reapply the original click handler
+      });
+      $('#slide-show span')
+        .html('Stop Slide Show');
     });
   }
   

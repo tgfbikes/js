@@ -13,10 +13,6 @@
       margin: 0;
     }
     
-    ul li {
-      margin: 0 0 0 40px;
-    }
-    
     #thumbnails {
       overflow: auto;
     }
@@ -69,12 +65,12 @@
     }
     
     .active-thumb {
-      border: 2px solid #76ff03;
+      border: 2px solid red;
       opacity: .6;
     }
     
     #slide-show {
-      margin: 20px 0 0 30px;
+      margin: 20px 0 0 16px;
     }
     
   </style>
@@ -82,7 +78,7 @@
 <body>
   <header>
     <section class="side-nav fixed grey lighten-4">
-      <div id="nav-logo" class="green lighten-1">
+      <div id="nav-logo" class="grey lighten-4">
         <i class="large material-icons">picture_in_picture</i>
       </div>
       <ul>
@@ -91,7 +87,7 @@
         <li><a href="#" id="category2">Category 3</a></li>
         <li><a href="#" id="category3">Category 4</a></li>
       </ul>
-      <button href="#" class="btn waves-effect green accent-2" id="slide-show"><span class="black-text">Slide Show</span></button>
+      <button class="btn waves-effect green accent-2" data="1" id="slide-show"><span class="black-text">Start Slide Show</span></button>
     </section>
   </header>
   <main>
