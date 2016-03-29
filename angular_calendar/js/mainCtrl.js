@@ -4,9 +4,11 @@
     .module('calendarApp')
     .controller('MainCtrl', MainCtrl);
 
+  MainCtrl.$inject = [];
+
   function MainCtrl() {
     var vm = this;
-    vm.isWorking = 'this is working';
+    vm.name = 'Stephen King';
   }
 
 }());
