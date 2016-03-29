@@ -3,13 +3,16 @@
   <head>
     <meta charset="utf-8">
     <title>Angular Calendar</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/directives/calendar.js"></script>
     <script src="js/mainCtrl.js"></script>
   </head>
   <body ng-app="calendarApp">
     <main ng-controller="MainCtrl as ctrl">
-      <h1>{{ctrl.isWorking}}</h1>
+      <h1>From controller: {{ctrl.name}}</h1>
+      <sk-calendar selected="day"></sk-calendar>
     </main>
   </body>
 </html>
