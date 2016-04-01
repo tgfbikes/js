@@ -8,7 +8,7 @@
 
   function MainCtrl() {
     var vm = this;
-    vm.name = 'Stephen King';
+    vm.name = 'Todd';
   }
 
 }());
