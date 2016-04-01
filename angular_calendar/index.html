@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="calendarApp">
   <head>
     <meta charset="utf-8">
     <title>Angular Calendar</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/directives/calendar.js"></script>
-    <script src="js/mainCtrl.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/mainCtrl.js"></script>
+    <script type="text/javascript" src="js/directives/calendar.js"></script>
   </head>
-  <body ng-app="calendarApp">
-    <main ng-controller="MainCtrl as ctrl">
-      <h1>From controller: {{ctrl.name}}</h1>
-      <sk-calendar selected="day"></sk-calendar>
-    </main>
+  <body ng-controller="MainCtrl as ctrl">
+    <h1>{{ ctrl.name }}</h1>
+    <sk-calendar></sk-calendar>
   </body>
 </html>
