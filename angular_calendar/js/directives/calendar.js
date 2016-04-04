@@ -11,11 +11,7 @@
       controllerAs: 'vm',
       controller: function skCalendarController() {
         var vm = this;
-        vm.changeName = changeName();
-
-        function changeName() {
-          vm.name = "Stephen F. King";
-        }
+        vm.month = "March";
       }
     }
   }
