@@ -1,6 +1,6 @@
 (function mainIIFE() {
 
   angular
-    .module('calendarApp', []);
+    .module('calendarApp', ['angularMoment', 'ngMaterial']);
 
 }());
