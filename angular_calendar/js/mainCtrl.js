@@ -4,11 +4,24 @@
     .module('calendarApp')
     .controller('MainCtrl', MainCtrl);
 
-  MainCtrl.$inject = [];
+  MainCtrl.$inject = ['dateService'];
 
-  function MainCtrl() {
+  function MainCtrl(dateService) {
     var vm = this;
-    vm.month = 'March';
+
+    vm.currentDay   = getCurrentDay();
+    vm.currentMonth = getCurrentMonth();
+    vm.currentYear  = getCurrentYear();
+
+    function getCurrentDay() {
+      return dateService.currentDay;
+    }
+    function getCurrentMonth() {
+      return dateService.currentMonth;
+    }
+    function getCurrentYear() {
+      return dateService.currentYear;
+    }
   }
 
 }());
