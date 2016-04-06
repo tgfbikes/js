@@ -8,7 +8,7 @@
 
   function MainCtrl(currentDateService, dateDataService) {
     var vm = this;
-
+    vm.months       = dateDataService.months;
     vm.currentDay   = getCurrentDay();
     vm.currentMonth = getCurrentMonth();
     vm.currentYear  = getCurrentYear();
