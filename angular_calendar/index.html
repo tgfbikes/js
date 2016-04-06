@@ -13,16 +13,14 @@
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.min.js"></script>
     <script type="text/javascript" src="js/angular-moment.min.js"></script>
-    <script type="text/javascript" src="js/dateService.js"></script>
+    <script type="text/javascript" src="js/dateDataService.js"></script>
+    <script type="text/javascript" src="js/currentDateService.js"></script>
     <script type="text/javascript" src="js/mainCtrl.js"></script>
     <script type="text/javascript" src="js/directives/calendar.js"></script>
   </head>
   <body ng-controller="MainCtrl as ctrl">
     <div class="container">
-      <h1>{{ ctrl.month }}</h1>
-      <h1>{{ ctrl.currentDay }}</h1>
-      <h1>{{ ctrl.currentMonth }}</h1>
-      <h1>{{ ctrl.currentYear }}</h1>
+      <h1>{{ ctrl.currentMonth }} {{ ctrl.currentDay }}, {{ ctrl.currentYear }}</h1>
       <table class="bordered">
         <thead>
           <tr>
