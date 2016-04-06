@@ -6,10 +6,14 @@
 
     dateService.$inject = []
 
+    var currentDate = new Date();
+
     function dateService() {
       var service = {
-        year: 2016,
-        months: {
+        currentDay: currentDate.getDay(),
+        currentMonth: currentDate.getMonth(),
+        currentYear: currentDate.getFullYear(),
+        months: [
           January: {
             days: 31
           },
@@ -46,7 +50,7 @@
           December: {
             days: 31
           }
-        }
+        ]
       }
       return service;
     }
