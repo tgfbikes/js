@@ -10,7 +10,9 @@
       templateUrl: 'calendar.html',
       controllerAs: 'vm',
       scope: {
-        months: '='
+        months: '=',
+        currentMonth: '=',
+        currentDay: '='
       },
       controller: function skCalendarController() {
       }
