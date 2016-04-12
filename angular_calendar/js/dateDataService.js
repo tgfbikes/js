@@ -37,7 +37,9 @@
                 },
                 friday: {
                   day_num: 1,
-                  events: []
+                  events: [
+                    'New Years Day'
+                  ]
                 },
                 saturday: {
                   day_num: 2,
