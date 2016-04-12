@@ -10,10 +10,13 @@
     var vm = this;
     vm.months       = dateDataService.months;
     vm.nowDate      = currentDateService;
+    vm.dayObj       = null;
     vm.day          = getDay();
     vm.month        = getMonth();
     vm.year         = getYear();
     vm.setMonth     = setMonth;
+    vm.setDay       = setDay;
+    vm.editDay      = editDay;
 
     function getDay() {
       return currentDateService.currentDay;
@@ -34,8 +37,12 @@
         monthNum: newMonth.number
       };
     }
-    function setDay(dayNum) {
-
+    function setDay(day) {
+      vm.day = day.day_num;
+      vm.dayObj = day;
+    }
+    function editDay(day) {
+      console.log(day);
     }
   }
 
