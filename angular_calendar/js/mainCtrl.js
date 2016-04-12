@@ -9,18 +9,33 @@
   function MainCtrl(currentDateService, dateDataService) {
     var vm = this;
     vm.months       = dateDataService.months;
-    vm.currentDay   = getCurrentDay();
-    vm.currentMonth = getCurrentMonth();
-    vm.currentYear  = getCurrentYear();
+    vm.nowDate      = currentDateService;
+    vm.day          = getDay();
+    vm.month        = getMonth();
+    vm.year         = getYear();
+    vm.setMonth     = setMonth;
 
-    function getCurrentDay() {
+    function getDay() {
       return currentDateService.currentDay;
     }
-    function getCurrentMonth() {
-      return dateDataService.months[currentDateService.currentMonth].month;
+    function getMonth() {
+      return {
+        monthName: dateDataService.months[currentDateService.currentMonth].month,
+        monthNum: currentDateService.currentMonth
+      }
     }
-    function getCurrentYear() {
+    function getYear() {
       return currentDateService.currentYear;
+    }
+    function setMonth(monthNum) {
+      newMonth = dateDataService.months[monthNum];
+      vm.month = {
+        monthName: newMonth.month,
+        monthNum: newMonth.number
+      };
+    }
+    function setDay(dayNum) {
+
     }
   }
 
