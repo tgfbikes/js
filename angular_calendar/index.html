@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Angular Calendar</title>
+    <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
@@ -20,20 +21,24 @@
   </head>
   <body ng-controller="MainCtrl as ctrl">
     <div class="container">
-      <h1>{{ ctrl.currentMonth }} {{ ctrl.currentDay }}, {{ ctrl.currentYear }}</h1>
-      <md-button>January</md-button>
-      <md-button>February</md-button>
-      <md-button>March</md-button>
-      <md-button>April</md-button>
-      <md-button>May</md-button>
-      <md-button>June</md-button>
-      <md-button>July</md-button>
-      <md-button>August</md-button>
-      <md-button>September</md-button>
-      <md-button>October</md-button>
-      <md-button>November</md-button>
-      <md-button>December</md-button>
-      <sk-calendar months="ctrl.months"></sk-calendar>
+      <header class="main-date">
+        <h1>{{ ctrl.month.monthName }} {{ ctrl.day }}, {{ ctrl.year }}</h1>
+      </header>
+      <div class="month-buttons">
+        <md-button ng-click="ctrl.setMonth(0)">January</md-button>
+        <md-button ng-click="ctrl.setMonth(1)">February</md-button>
+        <md-button ng-click="ctrl.setMonth(2)">March</md-button>
+        <md-button ng-click="ctrl.setMonth(3)">April</md-button>
+        <md-button ng-click="ctrl.setMonth(4)">May</md-button>
+        <md-button ng-click="ctrl.setMonth(5)">June</md-button>
+        <md-button ng-click="ctrl.setMonth(6)">July</md-button>
+        <md-button ng-click="ctrl.setMonth(7)">August</md-button>
+        <md-button ng-click="ctrl.setMonth(8)">September</md-button>
+        <md-button ng-click="ctrl.setMonth(9)">October</md-button>
+        <md-button ng-click="ctrl.setMonth(10)">November</md-button>
+        <md-button ng-click="ctrl.setMonth(11)">December</md-button>
+      </div>
+      <sk-calendar months="ctrl.months" current-month="ctrl.month.monthNum" current-day="ctrl.day"></sk-calendar>
     </div>
   </body>
 </html>
