@@ -1,0 +1,39 @@
+.container {
+  margin: 0 auto;
+  max-width: 960px;
+}
+.month-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.calendar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+.main-date {
+  display: flex;
+  align-items: center;
+  background-color: #00cccc;
+  height: 100px;
+}
+.main-date h1 {
+  margin: 0 0 0 20px;;
+}
+table {
+  width: 100%;
+}
+th {
+  text-align: left;
+  border-bottom: 1px solid #00cccc;
+}
+td {
+  padding: 0;
+  height: 80px;
+  width: 80px;
+}
+td:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
