@@ -13,7 +13,6 @@
         months: '='
       },
       controller: function skCalendarController() {
-        var vm = this;
       }
     }
   }
