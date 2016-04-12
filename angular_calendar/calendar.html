@@ -1,6 +1,5 @@
-<div>
-  {{ months }}
-  <table>
+<div class="calendar-container">
+  <table class"calendar-table">
     <thead>
       <tr>
         <th>Sunday</th>
@@ -13,8 +12,9 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>
+      <tr ng-repeat="week in months[currentMonth].weeks">
+        <td ng-repeat="day in week track by $index">
+          {{ day.day_num }}
         </td>
       </tr>
     </tbody>
