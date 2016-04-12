@@ -9,6 +9,7 @@
 }
 .calendar-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   margin-top: 40px;
@@ -22,18 +23,24 @@
 .main-date h1 {
   margin: 0 0 0 20px;;
 }
+.day {
+  font-size: 20px;
+}
 table {
   width: 100%;
 }
 th {
-  text-align: left;
   border-bottom: 1px solid #00cccc;
 }
 td {
   padding: 0;
   height: 80px;
   width: 80px;
+  text-align: center;
 }
 td:hover {
   background-color: rgba(0, 0, 0, 0.2);
+}
+.has-events {
+  color: red;
 }
