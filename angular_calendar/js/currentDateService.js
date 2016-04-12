@@ -10,7 +10,7 @@
 
     function currentDateService() {
       var service = {
-        currentDay: currentDate.getDay(),
+        currentDay: currentDate.getDate(),
         currentMonth: currentDate.getMonth(),
         currentYear: currentDate.getFullYear(),
       }
