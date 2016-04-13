@@ -4,16 +4,12 @@
     <meta charset="utf-8">
     <title>Angular Calendar</title>
     <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.min.js"></script>
-    <script type="text/javascript" src="js/angular-moment.min.js"></script>
     <script type="text/javascript" src="js/dateDataService.js"></script>
     <script type="text/javascript" src="js/currentDateService.js"></script>
     <script type="text/javascript" src="js/mainCtrl.js"></script>
@@ -21,21 +17,21 @@
   <body ng-controller="MainCtrl as ctrl">
     <div class="container">
       <header class="main-date">
-        <h1>{{ ctrl.month.monthName }} {{ ctrl.day }}, {{ ctrl.year }}</h1>
+        <h3>{{ ctrl.month.monthName }} {{ ctrl.day }}, {{ ctrl.year }}</h3>
       </header>
       <div class="month-buttons">
-        <md-button ng-click="ctrl.setMonth(0)">January</md-button>
-        <md-button ng-click="ctrl.setMonth(1)">February</md-button>
-        <md-button ng-click="ctrl.setMonth(2)">March</md-button>
-        <md-button ng-click="ctrl.setMonth(3)">April</md-button>
-        <md-button ng-click="ctrl.setMonth(4)">May</md-button>
-        <md-button ng-click="ctrl.setMonth(5)">June</md-button>
-        <md-button ng-click="ctrl.setMonth(6)">July</md-button>
-        <md-button ng-click="ctrl.setMonth(7)">August</md-button>
-        <md-button ng-click="ctrl.setMonth(8)">September</md-button>
-        <md-button ng-click="ctrl.setMonth(9)">October</md-button>
-        <md-button ng-click="ctrl.setMonth(10)">November</md-button>
-        <md-button ng-click="ctrl.setMonth(11)">December</md-button>
+        <button class="waves-effect waves-light btn" ng-click="ctrl.setMonth(0)">Jan</button>
+        <button class="waves-effect waves-light btn" ng-click="ctrl.setMonth(1)">Feb</button>
+        <button class="waves-effect waves-light btn" ng-click="ctrl.setMonth(2)">Mar</button>
+        <button class="waves-effect waves-light btn" ng-click="ctrl.setMonth(3)">Apr</button>
+        <button class="waves-effect waves-light btn" ng-click="ctrl.setMonth(4)">May</button>
+        <button class="waves-effect waves-light btn" ng-click="ctrl.setMonth(5)">Jun</button>
+        <button class="waves-effect waves-light btn" ng-click="ctrl.setMonth(6)">Jul</button>
+        <button class="waves-effect waves-light btn" ng-click="ctrl.setMonth(7)">Aug</button>
+        <button class="waves-effect waves-light btn" ng-click="ctrl.setMonth(8)">Sep</button>
+        <button class="waves-effect waves-light btn" ng-click="ctrl.setMonth(9)">Oct</button>
+        <button class="waves-effect waves-light btn" ng-click="ctrl.setMonth(10)">Nov</button>
+        <button class="waves-effect waves-light btn" ng-click="ctrl.setMonth(11)">Dec</button>
       </div>
       <div class="calendar-container">
         <table class"calendar-table">
@@ -62,15 +58,17 @@
         </table>
         <div>
           <div class="event-container">
-            <h2>{{ ctrl.month.monthName }} {{ ctrl.day }} Events</h2>
+            <h5>{{ ctrl.month.monthName }} {{ ctrl.day }} Events</h5>
             <ul ng-show="ctrl.dayObj.events.length > 0">
-              <li ng-repeat="event in ctrl.dayObj.events">{{ event }}</li>
+              <li ng-repeat="event in ctrl.dayObj.events">
+                {{ event }} <a ng-click="ctrl.deleteEvent(event)"><i class="material-icons">delete</i></a>
+              </li>
             </ul>
-            <h4 ng-hide="ctrl.dayObj.events.length > 0">No Events</h4>
+            <h6 ng-hide="ctrl.dayObj.events.length > 0">No Events</h6>
           </div>
           <div class="event-container-edit">
-            <h2>Add an Event</h2>
-            <form ng-submit="ctrl.createDay()">
+            <h5>Add an Event</h5>
+            <form ng-submit="ctrl.createEvent()">
               <input type="text" ng-model="ctrl.event">
               <input type="submit" value="Add Event">
             </form>
