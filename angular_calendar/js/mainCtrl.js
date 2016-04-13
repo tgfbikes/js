@@ -8,6 +8,8 @@
 
   function MainCtrl(currentDateService, dateDataService) {
     var vm = this;
+
+    vm.event        = '',
     vm.months       = dateDataService.months;
     vm.nowDate      = currentDateService;
     vm.dayObj       = null;
@@ -17,6 +19,7 @@
     vm.setMonth     = setMonth;
     vm.setDay       = setDay;
     vm.editDay      = editDay;
+    vm.createDay    = createDay;
 
     function getDay() {
       return currentDateService.currentDay;
@@ -43,6 +46,13 @@
     }
     function editDay(day) {
       console.log(day);
+    }
+    function createDay() {
+      console.log(vm.dayObj);
+      if (vm.event) {
+        vm.dayObj.events.push(vm.event);
+        vm.event = '';
+      }
     }
   }
 
