@@ -5,7 +5,8 @@
 .month-buttons {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
+  margin-top: 30px;
 }
 .calendar-container {
   display: flex;
@@ -23,6 +24,9 @@
 .main-date h1 {
   margin: 0 0 0 20px;;
 }
+.main-date h3 {
+  margin: 0 0 0 20px;;
+}
 .day {
   font-size: 20px;
 }
@@ -37,4 +41,14 @@ td:hover {
 }
 .has-events {
   color: red;
+}
+.event-container {
+  display: flex;
+  margin-top: 30px;
+}
+.event-container-edit {
+  margin-left: 60px;
+}
+.not-in-month {
+  color: #d1d1d1;
 }
