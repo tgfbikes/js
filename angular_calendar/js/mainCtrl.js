@@ -19,7 +19,8 @@
     vm.setMonth     = setMonth;
     vm.setDay       = setDay;
     vm.editDay      = editDay;
-    vm.createDay    = createDay;
+    vm.createEvent  = createEvent;
+    vm.deleteEvent  = deleteEvent;
 
     function getDay() {
       return currentDateService.currentDay;
@@ -47,12 +48,15 @@
     function editDay(day) {
       console.log(day);
     }
-    function createDay() {
-      console.log(vm.dayObj);
+    function createEvent() {
       if (vm.event) {
         vm.dayObj.events.push(vm.event);
         vm.event = '';
       }
+    }
+    function deleteEvent(evt) {
+      var eventIndex = vm.dayObj.events.indexOf(evt);
+      vm.dayObj.events.splice(eventIndex, 1);
     }
   }
 
