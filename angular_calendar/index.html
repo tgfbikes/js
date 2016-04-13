@@ -50,14 +50,16 @@
             <tr ng-repeat="week in ctrl.months[ctrl.month.monthNum].weeks">
               <td ng-repeat="day in week track by $index" ng-click="ctrl.setDay(day)">
                 <div class="day" ng-class="{'has-events': day.events.length > 0}">
-                  {{ day.day_num }}
+                  <div ng-class="{'not-in-month': day.not_in_month === true}">
+                    {{ day.day_num }}
+                  </div>
                 </div>
               </td>
             </tr>
           </tbody>
         </table>
-        <div>
-          <div class="event-container">
+        <div class="event-container">
+          <div class="event-container-events">
             <h5>{{ ctrl.month.monthName }} {{ ctrl.day }} Events</h5>
             <ul ng-show="ctrl.dayObj.events.length > 0">
               <li ng-repeat="event in ctrl.dayObj.events">
