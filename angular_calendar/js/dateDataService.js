@@ -17,23 +17,30 @@
               week_1: {
                 sunday: {
                   day_num: 27,
+                  not_in_month: true,
                   events: []
                 },
                 monday: {
                   day_num: 28,
+                  not_in_month: true,
                   events: []
                 },
                 tuesday: {
                   day_num: 29,
+                  not_in_month: true,
                   events: []
                 },
                 wednesday: {
                   day_num: 30,
+                  not_in_month: true,
                   events: []
                 },
                 thursday: {
                   day_num: 31,
-                  events: []
+                  not_in_month: true,
+                  events: [
+                    'New Years Eve'
+                  ]
                 },
                 friday: {
                   day_num: 1,
@@ -173,26 +180,32 @@
                 },
                 monday: {
                   day_num: 1,
+                  not_in_month: true,
                   events: []
                 },
                 tuesday: {
                   day_num: 2,
+                  not_in_month: true,
                   events: []
                 },
                 wednesday: {
                   day_num: 3,
+                  not_in_month: true,
                   events: []
                 },
                 thursday: {
                   day_num: 4,
+                  not_in_month: true,
                   events: []
                 },
                 friday: {
                   day_num: 5,
+                  not_in_month: true,
                   events: []
                 },
                 saturday: {
                   day_num: 6,
+                  not_in_month: true,
                   events: []
                 }
               }
@@ -206,6 +219,7 @@
               week_1: {
                 sunday: {
                   day_num: 31,
+                  not_in_month: true,
                   events: []
                 },
                 monday: {
@@ -266,11 +280,15 @@
               week_3: {
                 sunday: {
                   day_num: 14,
-                  events: []
+                  events: [
+                    'Valentines Day'
+                  ]
                 },
                 monday: {
                   day_num: 15,
-                  events: []
+                  events: [
+                    'Presidents Day'
+                  ]
                 },
                 tuesday: {
                   day_num: 16,
@@ -334,22 +352,27 @@
                 },
                 tuesday: {
                   day_num: 1,
+                  not_in_month: true,
                   events: []
                 },
                 wednesday: {
                   day_num: 2,
+                  not_in_month: true,
                   events: []
                 },
                 thursday: {
                   day_num: 3,
+                  not_in_month: true,
                   events: []
                 },
                 friday: {
                   day_num: 4,
+                  not_in_month: true,
                   events: []
                 },
                 saturday: {
                   day_num: 5,
+                  not_in_month: true,
                   events: []
                 }
               }
@@ -363,10 +386,12 @@
               week_1: {
                 sunday: {
                   day_num: 28,
+                  not_in_month: true,
                   events: []
                 },
                 monday: {
                   day_num: 29,
+                  not_in_month: true,
                   events: []
                 },
                 tuesday: {
@@ -423,7 +448,9 @@
               week_3: {
                 sunday: {
                   day_num: 13,
-                  events: []
+                  events: [
+                    'Day Light Savings Time'
+                  ]
                 },
                 monday: {
                   day_num: 14,
@@ -483,7 +510,9 @@
               week_5: {
                 sunday: {
                   day_num: 27,
-                  events: []
+                  events: [
+                    'Easter Sunday'
+                  ]
                 },
                 monday: {
                   day_num: 28,
@@ -503,10 +532,12 @@
                 },
                 friday: {
                   day_num: 1,
+                  not_in_month: true,
                   events: []
                 },
                 saturday: {
                   day_num: 2,
+                  not_in_month: true,
                   events: []
                 }
               }
@@ -520,22 +551,27 @@
               week_1: {
                 sunday: {
                   day_num: 27,
+                  not_in_month: true,
                   events: []
                 },
                 monday: {
                   day_num: 28,
+                  not_in_month: true,
                   events: []
                 },
                 tuesday: {
                   day_num: 29,
+                  not_in_month: true,
                   events: []
                 },
                 wednesday: {
                   day_num: 30,
+                  not_in_month: true,
                   events: []
                 },
                 thursday: {
                   day_num: 31,
+                  not_in_month: true,
                   events: []
                 },
                 friday: {
@@ -592,7 +628,9 @@
                 },
                 wednesday: {
                   day_num: 13,
-                  events: []
+                  events: [
+                    'Thomas Jefferson\'s Birthday'
+                  ]
                 },
                 thursday: {
                   day_num: 14,
@@ -707,7 +745,9 @@
               week_2: {
                 sunday: {
                   day_num: 8,
-                  events: []
+                  events: [
+                    'Mothers Day'
+                  ]
                 },
                 monday: {
                   day_num: 9,
@@ -801,7 +841,9 @@
                 },
                 monday: {
                   day_num: 30,
-                  events: []
+                  events: [
+                    'Memorial Day'
+                  ]
                 },
                 tuesday: {
                   day_num: 31,
@@ -809,18 +851,22 @@
                 },
                 wednesday: {
                   day_num: 1,
+                  not_in_month: true,
                   events: []
                 },
                 thursday: {
                   day_num: 2,
+                  not_in_month: true,
                   events: []
                 },
                 friday: {
                   day_num: 3,
+                  not_in_month: true,
                   events: []
                 },
                 saturday: {
                   day_num: 4,
+                  not_in_month: true,
                   events: []
                 }
               }
@@ -834,14 +880,17 @@
               week_1: {
                 sunday: {
                   day_num: 29,
+                  not_in_month: true,
                   events: []
                 },
                 monday: {
                   day_num: 30,
+                  not_in_month: true,
                   events: []
                 },
                 tuesday: {
                   day_num: 31,
+                  not_in_month: true,
                   events: []
                 },
                 wednesday: {
@@ -924,7 +973,9 @@
               week_4: {
                 sunday: {
                   day_num: 19,
-                  events: []
+                  events: [
+                    'Fathers Day'
+                  ]
                 },
                 monday: {
                   day_num: 20,
@@ -974,10 +1025,12 @@
                 },
                 friday: {
                   day_num: 1,
+                  not_in_month: true,
                   events: []
                 },
                 saturday: {
                   day_num: 2,
+                  not_in_month: true,
                   events: []
                 }
               }
@@ -991,22 +1044,27 @@
               week_1: {
                 sunday: {
                   day_num: 26,
+                  not_in_month: true,
                   events: []
                 },
                 monday: {
                   day_num: 27,
+                  not_in_month: true,
                   events: []
                 },
                 tuesday: {
                   day_num: 28,
+                  not_in_month: true,
                   events: []
                 },
                 wednesday: {
                   day_num: 29,
+                  not_in_month: true,
                   events: []
                 },
                 thursday: {
                   day_num: 30,
+                  not_in_month: true,
                   events: []
                 },
                 friday: {
@@ -1025,7 +1083,9 @@
                 },
                 monday: {
                   day_num: 4,
-                  events: []
+                  events: [
+                    'Independence Day'
+                  ]
                 },
                 tuesday: {
                   day_num: 5,
@@ -1145,26 +1205,32 @@
                 },
                 monday: {
                   day_num: 1,
+                  not_in_month: true,
                   events: []
                 },
                 tuesday: {
                   day_num: 2,
+                  not_in_month: true,
                   events: []
                 },
                 wednesday: {
                   day_num: 3,
+                  not_in_month: true,
                   events: []
                 },
                 thursday: {
                   day_num: 4,
+                  not_in_month: true,
                   events: []
                 },
                 friday: {
                   day_num: 5,
+                  not_in_month: true,
                   events: []
                 },
                 saturday: {
                   day_num: 6,
+                  not_in_month: true,
                   events: []
                 }
               }
@@ -1178,6 +1244,7 @@
               week_1: {
                 sunday: {
                   day_num: 31,
+                  not_in_month: true,
                   events: []
                 },
                 monday: {
@@ -1314,14 +1381,17 @@
                 },
                 thursday: {
                   day_num: 1,
+                  not_in_month: true,
                   events: []
                 },
                 friday: {
                   day_num: 2,
+                  not_in_month: true,
                   events: []
                 },
                 saturday: {
                   day_num: 3,
+                  not_in_month: true,
                   events: []
                 }
               }
@@ -1335,18 +1405,22 @@
               week_1: {
                 sunday: {
                   day_num: 28,
+                  not_in_month: true,
                   events: []
                 },
                 monday: {
                   day_num: 29,
+                  not_in_month: true,
                   events: []
                 },
                 tuesday: {
                   day_num: 30,
+                  not_in_month: true,
                   events: []
                 },
                 wednesday: {
                   day_num: 31,
+                  not_in_month: true,
                   events: []
                 },
                 thursday: {
@@ -1369,7 +1443,9 @@
                 },
                 monday: {
                   day_num: 5,
-                  events: []
+                  events: [
+                    'Labor Day'
+                  ]
                 },
                 tuesday: {
                   day_num: 6,
@@ -1479,6 +1555,7 @@
                 },
                 saturday: {
                   day_num: 1,
+                  not_in_month: true,
                   events: []
                 }
               }
@@ -1492,26 +1569,32 @@
               week_1: {
                 sunday: {
                   day_num: 25,
+                  not_in_month: true,
                   events: []
                 },
                 monday: {
                   day_num: 26,
+                  not_in_month: true,
                   events: []
                 },
                 tuesday: {
                   day_num: 27,
+                  not_in_month: true,
                   events: []
                 },
                 wednesday: {
                   day_num: 28,
+                  not_in_month: true,
                   events: []
                 },
                 thursday: {
                   day_num: 29,
+                  not_in_month: true,
                   events: []
                 },
                 friday: {
                   day_num: 30,
+                  not_in_month: true,
                   events: []
                 },
                 saturday: {
@@ -1556,7 +1639,9 @@
                 },
                 monday: {
                   day_num: 10,
-                  events: []
+                  events: [
+                    'Columbus Day'
+                  ]
                 },
                 tuesday: {
                   day_num: 11,
@@ -1646,26 +1731,33 @@
                 },
                 monday: {
                   day_num: 31,
-                  events: []
+                  events: [
+                    'Halloween'
+                  ]
                 },
                 tuesday: {
                   day_num: 1,
+                  not_in_month: true,
                   events: []
                 },
                 wednesday: {
                   day_num: 2,
+                  not_in_month: true,
                   events: []
                 },
                 thursday: {
                   day_num: 3,
+                  not_in_month: true,
                   events: []
                 },
                 friday: {
                   day_num: 4,
+                  not_in_month: true,
                   events: []
                 },
                 saturday: {
                   day_num: 5,
+                  not_in_month: true,
                   events: []
                 }
               }
@@ -1679,10 +1771,12 @@
               week_1: {
                 sunday: {
                   day_num: 30,
+                  not_in_month: true,
                   events: []
                 },
                 monday: {
                   day_num: 31,
+                  not_in_month: true,
                   events: []
                 },
                 tuesday: {
@@ -1789,7 +1883,9 @@
                 },
                 friday: {
                   day_num: 25,
-                  events: []
+                  events: [
+                    'Thanksgiving'
+                  ]
                 },
                 saturday: {
                   day_num: 26,
@@ -1815,14 +1911,17 @@
                 },
                 thursday: {
                   day_num: 1,
+                  not_in_month: true,
                   events: []
                 },
                 friday: {
                   day_num: 2,
+                  not_in_month: true,
                   events: []
                 },
                 saturday: {
                   day_num: 3,
+                  not_in_month: true,
                   events: []
                 }
               }
@@ -1836,18 +1935,22 @@
               week_1: {
                 sunday: {
                   day_num: 27,
+                  not_in_month: true,
                   events: []
                 },
                 monday: {
                   day_num: 28,
+                  not_in_month: true,
                   events: []
                 },
                 tuesday: {
                   day_num: 29,
+                  not_in_month: true,
                   events: []
                 },
                 wednesday: {
                   day_num: 30,
+                  not_in_month: true,
                   events: []
                 },
                 thursday: {
@@ -1950,13 +2053,17 @@
                 },
                 saturday: {
                   day_num: 24,
-                  events: []
+                  events: [
+                    'Christmas Eve'
+                  ]
                 }
               },
               week_5: {
                 sunday: {
                   day_num: 25,
-                  events: []
+                  events: [
+                    'Christmas'
+                  ]
                 },
                 monday: {
                   day_num: 26,
