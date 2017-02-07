@@ -1,5 +1,14 @@
 
 
+let sequence
+function runGenerator (generator) {
+    sequence = generator()
+    sequence.next()
+}
+
+function resumeGenerator (value) {
+    sequence.next(value)
+}
 
 export const getOrder = function (orderId) {
     return Promise.resolve({userId: 20})
@@ -27,4 +36,29 @@ export const getCourse = function (courseId) {
     }
 
     return Promise.resolve(courses[courseId])
+}
+
+export const asyncGenMethods = {
+    runGenerator,
+    resumeGenerator
+}
+
+export const pause = function (time) {
+    setTimeout(function () {
+        console.log(`paused for ${time}ms`)
+        asyncGenMethods.resumeGenerator()
+    }, time)
+}
+
+export const getStockPrice = function () {
+    setTimeout(function() {
+        asyncGenMethods.resumeGenerator(50)
+    }, 500);
+}
+
+export const executeTrade = function () {
+    setTimeout(function() {
+        console.log('trade completed')
+        asyncGenMethods.resumeGenerator()
+    }, 500);
 }
